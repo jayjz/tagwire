@@ -1,10 +1,10 @@
 # Evidence contract - version 0.1
 
-This is the conceptual contract; implementation schemas and tests must conform. Schema design should keep raw source records distinct from derived assertions.
+This is the conceptual contract; implementation schemas and tests must conform. Schema design should keep raw source records distinct from derived assertions. See [M1 implementation](M1_EVIDENCE_FOUNDATION.md) for current schemas and limits.
 
 ## Source evidence
 
-Each source has stable id, job id, source kind (audio, photo, manual entry), creation timestamp, content reference and capture status. Preserve original content and subsequent corrections as distinct revisions. Do not place sensitive media in Git.
+Each source has stable id, job id, source kind (audio, photo, manual entry), creation timestamp (explicitly null when unavailable in historical imports), content reference and capture status. Text entries may store content inline; media requires a content reference. Preserve original content and subsequent corrections as distinct revisions. Do not place sensitive media in Git.
 
 ## Claim
 
@@ -25,7 +25,7 @@ No reading amount is inferred from voltagePresence. Zero is a real value and not
 ## Distinct workflow states
 
 - customer response: unknown, agreed_to_plan, declined, deferred
-- part: not_assessed, proposed, approved, ordered, received, installed
+- part: not_assessed, proposed, approved, requested, ordered, received, installed
 - visit: not_proposed, proposed, scheduled, completed, cancelled
 - report: draft, reviewed, approved, exported
 

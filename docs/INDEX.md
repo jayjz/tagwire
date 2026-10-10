@@ -1,6 +1,8 @@
 # Tagwire documentation index
 
-Status: design contract; no implemented workflow implied.
+Status: design contract plus the M1 domain foundation; no capture or report workflow implied.
+
+Implemented scope and usage: [M1 evidence foundation](M1_EVIDENCE_FOUNDATION.md).
 
 Read in this order for an implementation task:
 
