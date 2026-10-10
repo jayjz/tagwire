@@ -1,0 +1,46 @@
+{
+  "fixtureId": "hvac-001-smith",
+  "fictional": true,
+  "customerLabel": "Miss Smith",
+  "equipment": {
+    "type": "furnace",
+    "brand": "Goodman",
+    "model": null,
+    "serial": null
+  },
+  "events": [
+    {
+      "id": "note-001",
+      "kind": "technician_report",
+      "text": "I tested the induced draft motor with a multimeter. Voltage is present at the motor; the numerical reading was not recorded."
+    },
+    {
+      "id": "note-002",
+      "kind": "technician_report",
+      "text": "I removed the inducer motor and found it seized. My diagnosis is failed inducer motor; I also described the windings as bad, but no separate winding test was reported."
+    },
+    {
+      "id": "note-003",
+      "kind": "technician_report",
+      "text": "I told Miss Smith we can order the replacement today and plan a return visit within a week. She agreed. No order or appointment is confirmed."
+    }
+  ],
+  "expected": {
+    "electricalTest": {
+      "component": "induced_draft_motor",
+      "instrument": "multimeter",
+      "voltagePresence": "present",
+      "measuredVoltage": null,
+      "unit": "unknown",
+      "sourceIds": ["note-001"]
+    },
+    "mechanicalObservation": {
+      "motorSeized": true,
+      "sourceIds": ["note-002"]
+    },
+    "technicianAssessment": "failed inducer motor",
+    "customerResponse": "agreed_to_plan",
+    "partStatus": "proposed",
+    "visitStatus": "proposed"
+  }
+}
