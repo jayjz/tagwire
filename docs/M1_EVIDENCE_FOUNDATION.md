@@ -37,7 +37,7 @@ Zod was already installed; its [official schema documentation](https://zod.dev/a
 
 [Dexie](https://dexie.org/docs/) was evaluated as an IndexedDB wrapper for later durable capture. M1 has no persistence calls, so Dexie is not installed.
 
-Run `npm test`, `npm run typecheck`, `npm run lint`, `npm run build`, and `git diff --check`. Existing CI runs these categories already. Tests check structure and invariants, not whether a technician statement is true.
+Run `npm test`, `npm run typecheck`, `npm run lint`, `npm run build`, and `git diff --check`. CI runs these categories. The typecheck script first runs `next typegen`, as required by the installed Next.js documentation for generated `LayoutProps` on a clean checkout. CI uses this script; the original standalone `tsc` step failed before generating route types. Tests check structure and invariants, not whether a technician statement is true.
 
 ## Limits
 
